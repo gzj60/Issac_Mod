@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+    <name>Player Homing Tears</name>
+    <directory>player_homing_tears</directory>
+    <id>0</id>
+    <description>Player and friendly familiar tears and lasers gain unlimited range, piercing, spectral movement, and strong homing. Enemy attacks are unchanged.</description>
+    <version>1.2</version>
+    <visibility>Private</visibility>
+    <tag id="Lua"/>
+</metadata>
