@@ -11,16 +11,16 @@ def read_workspace_lua():
     return (WORKSPACE_MOD_DIR / "main.lua").read_text(encoding="utf-8")
 
 
-def test_player_tears_receive_all_enhancements():
+def test_player_tears_keep_native_range_and_receive_other_enhancements():
     lua = read_workspace_lua()
 
     assert "TearFlags.TEAR_HOMING" in lua
     assert "TearFlags.TEAR_PIERCING" in lua
     assert "TearFlags.TEAR_SPECTRAL" in lua
-    assert "tear.Height = FLIGHT_HEIGHT" in lua
-    assert "tear.FallingSpeed = 0" in lua
-    assert "tear.FallingAcceleration = 0" in lua
-    assert "local FLIGHT_HEIGHT = -23" in lua
+    assert "FLIGHT_HEIGHT" not in lua
+    assert "tear.Height" not in lua
+    assert "tear.FallingSpeed" not in lua
+    assert "tear.FallingAcceleration" not in lua
 
 
 def test_strong_homing_uses_only_valid_hostile_targets():

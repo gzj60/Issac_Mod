@@ -4,7 +4,6 @@ local HOMING_FLAG = TearFlags.TEAR_HOMING
 local PIERCING_FLAG = TearFlags.TEAR_PIERCING
 local SPECTRAL_FLAG = TearFlags.TEAR_SPECTRAL
 local HOMING_STRENGTH = 0.30
-local FLIGHT_HEIGHT = -23
 local MIN_VECTOR_LENGTH = 0.001
 
 local function getPlayerOwner(entity)
@@ -52,10 +51,6 @@ local function applyTearEnhancements(tear)
     addFlagIfMissing(tear, HOMING_FLAG)
     addFlagIfMissing(tear, PIERCING_FLAG)
     addFlagIfMissing(tear, SPECTRAL_FLAG)
-
-    tear.Height = FLIGHT_HEIGHT
-    tear.FallingSpeed = 0
-    tear.FallingAcceleration = 0
 end
 
 local function applyLaserEnhancements(laser)
