@@ -83,11 +83,12 @@ def test_workspace_and_installed_mod_are_synchronized():
         assert installed_content == workspace_content
 
 
-def test_metadata_describes_enhanced_tears_and_lasers():
+def test_metadata_describes_native_range_tears_and_unlimited_lasers():
     xml = (WORKSPACE_MOD_DIR / "metadata.xml").read_text(encoding="utf-8")
 
     assert "<name>Player Homing Tears</name>" in xml
     assert "<id>0</id>" in xml
-    assert "<version>1.2</version>" in xml
-    assert "tears and lasers gain unlimited range" in xml
+    assert "<version>1.3</version>" in xml
+    assert "tears gain piercing, spectral movement, and strong homing" in xml
+    assert "lasers also gain unlimited range" in xml
     assert "Enemy attacks are unchanged" in xml
